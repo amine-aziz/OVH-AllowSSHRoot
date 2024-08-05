@@ -7,12 +7,6 @@ sudo passwd root
 echo "Restaring SSH Server.."
 sudo service sshd restart
 echo "Done!"
-echo "Test SSH login with user root? (Y/n)"
-    read -r input
-    if [[ "$input" =~ ^[Yy]$ ]]; then
-        ssh root@127.0.0.1 'echo "It work!" && sleep 1 && exit'
-    fi
-    else
-        exit
-    fi
-fi
+echo "Testing SSH login with user root"
+ssh root@127.0.0.1 'echo "It work!" && sleep 1 && exit'
+
