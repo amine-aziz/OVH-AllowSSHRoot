@@ -1,13 +1,11 @@
 #!/bin/bash
 
-echo "Switching to user root.."
-sudo -i
 echo "Allowing user root SSH Login..
-sed -ri 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+sudo sed -ri 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 echo "Changing user root Password.."
-passwd
+sudo passwd root
 echo "Restaring SSH Server.."
-service sshd restart
+sudo service sshd restart
 echo "Done!"
 echo "Test SSH login with user root? (Y/n)"
     read -r input
