@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Allowing user root SSH Login..
+echo "Allowing user root SSH Login.."
 sudo sed -ri 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
 echo "Changing user root Password.."
 sudo passwd root
